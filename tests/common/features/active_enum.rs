@@ -1,7 +1,8 @@
 use sea_orm::entity::prelude::*;
 
 #[derive(Clone, Debug, PartialEq, DeriveEntityModel)]
-#[sea_orm(schema_name = "public", table_name = "active_enum")]
+#[cfg_attr(feature = "sqlx-postgres", sea_orm(schema_name = "public"))]
+#[sea_orm(table_name = "active_enum")]
 pub struct Model {
     #[sea_orm(primary_key)]
     pub id: i32,
